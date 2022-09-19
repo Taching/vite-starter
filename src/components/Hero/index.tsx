@@ -1,6 +1,6 @@
 import './style.scss';
 
-export default function WhatWeDo() {
+export default function Hero() {
   return (
     <div className="hero herostyle">
       <div className="hero-content text_center">

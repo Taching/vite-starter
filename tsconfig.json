@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "noImplicitAny": false,
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": true,
+    "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
@@ -24,6 +23,5 @@
     "tailwind.config.cjs",
     "postcss.config.cjs"
   ],
-  "exclude": ["dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
