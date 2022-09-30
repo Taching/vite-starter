@@ -6,7 +6,8 @@ export default function Slides() {
   return (
     <div className="SlideContainer">
       <WhatWeDo />
-
+      <WhatWeDo />
+      <WhatWeDo />
       <ContactUs />
     </div>
   );
