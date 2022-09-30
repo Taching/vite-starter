@@ -1,22 +1,40 @@
 import ContentInfo from './InfoContent';
 import ContentSteps from './StepsContent';
-import './style.scss';
-// <<<<<<< HEAD
-// =======
 import SlideContainer from '../SlideContainer';
-import WWDInfo from './WWDInfo';
-// >>>>>>> 298685d075e30329f49f106a0f111bc31cca36f4
+import Hero from './Hero';
+import './style.scss';
 
 export default function WhatWeDo() {
   return (
-    <div className="flex place-items-center wwd-style">
-      <div className="wwd-style_content wwd-style_info">
-        <ContentInfo />
-      </div>
+    <SlideContainer>
+      <div className="flex flex-col w-full ">
+        <div className="hero__container h-[40vh] w-screen">
+          <Hero />
+        </div>
+        <div className="wwd-style h-[60vh] w-screen">
+          <div className="flex place-items-center">
+            <div className="wwd-style_content wwd-style_info">
+              <ContentInfo />
+            </div>
 
-      <div className="wwd-style_content wwd-style_steps">
-        <ContentSteps />
+            <div className="wwd-style_content wwd-style_steps">
+              <ContentSteps />
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+      {/* <div className="wwd-style_hero">
+        <Hero />
+      </div>
+      <div className="flex place-items-center wwd-style">
+        <div className="wwd-style_content wwd-style_info">
+          <ContentInfo />
+        </div>
+
+        <div className="wwd-style_content wwd-style_steps">
+          <ContentSteps />
+        </div>
+      </div> */}
+    </SlideContainer>
   );
 }

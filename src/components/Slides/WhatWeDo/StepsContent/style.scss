@@ -1,14 +1,29 @@
 .steps-style {
+    .steps-vertical .step:before {
 
+        width: 0.2rem;
+    
+        }
+        .steps .step:after {
+            font-size: large;
+            font-weight: bolder;
+            height: 2.5rem;
+            width: 2.5rem;
+    
+        }
+        .steps .step::before{
+            background-color: royalblue;
+        }
 
     &_list {
-        height: auto;
+        height: 10vh;
     }
 
     &_text {
         text-align: start;
         align-self: flex-end;
         margin-top: 3rem;
+        text-transform: none;
 
     }
 
@@ -16,6 +31,7 @@
         color: var(--black);
         font-weight: 900;
         font-size: 1.2rem;
+        padding-bottom: .1rem;
 
     }
 
@@ -23,7 +39,9 @@
     p {
         // display: none;
         width: 25rem;
-
+        font-weight: 500;
         text-align: start;
+        font-size: .9rem;
+    
     }
 }

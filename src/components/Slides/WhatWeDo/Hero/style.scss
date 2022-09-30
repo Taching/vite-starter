@@ -1,0 +1,27 @@
+.herostyle {
+    height: 40vh;
+
+    &_content {
+
+      max-width: 50rem;
+      @include center;
+    }
+
+    &_text {
+      color: var(--white);
+      font-weight: bold;
+      font-size: 3rem;
+      text-align: center;
+      text-transform: none;
+     
+    }
+    &_btn {
+        margin-top: 20px;
+        padding-bottom: 10px;
+        font-size: 18px;
+        width: 230px;
+        text-align: center;
+        color: var(--white);
+        border-bottom: 1px solid var(--primary);
+      }
+  }

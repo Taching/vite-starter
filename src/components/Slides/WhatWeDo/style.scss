@@ -1,43 +1,34 @@
-// <<<<<<< HEAD
+.slide__content p{
+  color:var(--black);
+  text-transform: none;
+  width: 90%;
+  max-width: 500px;
+  font-weight: 600;
+}
+
 .wwd-style {
   background-color: var(--white);
-  height: 800px;
   justify-content: center;
-  flex: 2 1 auto;
   box-sizing: border-box;
-  max-width: 1350px;
   margin-inline: auto;
-
+  width: 100%;
+  z-index: 1;
+  @include center;
   &_content {
     margin-inline: 1rem;
+    max-width: 1350px;
+    
   }
 
   &_info {
-    @include center;
+    
     align-self: flex-end;
     padding: 4rem 2rem 2rem 2rem;
   }
 
   &_steps {
-    width: 60%;
+    padding-inline: 2rem;
   }
 }
-  // =======
-  .herostyle {
-    height: 350px;
 
-    &_content {
-
-      max-width: 50rem;
-      @include center;
-    }
-
-    &_text {
-      color: var(--white);
-      font-weight: bold;
-      font-size: 60px;
-      text-align: center;
-    }
-
-    // >>>>>>> 298685d075e30329f49f106a0f111bc31cca36f4
-  }
+  
