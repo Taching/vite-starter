@@ -16,7 +16,7 @@
         }
 
     &_list {
-        height: 10vh;
+        height:auto;
     }
 
     &_text {
@@ -30,7 +30,7 @@
     &_title {
         color: var(--black);
         font-weight: 900;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         padding-bottom: .1rem;
 
     }
@@ -41,7 +41,7 @@
         width: 25rem;
         font-weight: 500;
         text-align: start;
-        font-size: .9rem;
+        font-size: 1rem;
     
     }
 }

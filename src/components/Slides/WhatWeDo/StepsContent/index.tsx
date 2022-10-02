@@ -1,7 +1,29 @@
+/* eslint-disable react/prop-types */
+import gsap from 'gsap';
+import { useEffect } from 'react';
 import STEPS_TEXT from '../../../../assets/constants/steps';
 import './style.scss';
 
-export default function ContentSteps() {
+export default function ContentSteps({ timeLine }) {
+  useEffect(() => {
+    timeLine
+      .from(
+        '.steps-vertical',
+        {
+          opacity: 0,
+          y: 200,
+          ease: 'back(1.4).out',
+          duration: 1,
+        },
+        'Start'
+      )
+      .to(
+        '.steps-vertical',
+        { opacity: 1, y: 0, ease: 'back(1.4).out', duration: 1 },
+        '.5'
+      );
+  });
+
   return (
     <div className="steps steps-style">
       <ul className="steps steps-vertical">

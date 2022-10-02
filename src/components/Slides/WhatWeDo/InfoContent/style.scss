@@ -3,19 +3,19 @@
 
     &_container {
         flex-direction: column;
-        margin-top: 5rem;
+        margin-top: 2rem;
         
 
         .content-style_text {
             font-weight:bolder;
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: var(--black);
             text-transform: none;
         }
 
         .content-style_subtext {
             padding-block: 2rem;
-            font-size: .9rem;
+            font-size: 1rem;
             font-weight: 600;
            
             

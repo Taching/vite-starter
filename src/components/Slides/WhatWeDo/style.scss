@@ -2,7 +2,7 @@
 .slide__content p{
   color:var(--black);
   text-transform: none;
-  width: 90%;
+  width: 100%;
   max-width: 500px;
   font-weight: 600;
 }
@@ -11,8 +11,6 @@
   background-color: var(--white);
   justify-content: center;
   box-sizing: border-box;
-  margin-inline: auto;
-  width: 100%;
   z-index: 1;
   @include center;
   &_content {
