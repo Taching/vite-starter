@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import gsap from 'gsap';
 import { useEffect } from 'react';
 import STEPS_TEXT from '../../../../assets/constants/steps';
 import './style.scss';
