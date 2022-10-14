@@ -1,28 +1,23 @@
 .steps-style {
-    
-    .steps-vertical .step:before {
 
+    .steps-vertical .step:before {
         width: 0.2rem;
-    
-        }
-        .steps .step:after {
-            font-size: large;
-            font-weight: bolder;
-            height: 2.5rem;
-            width: 2.5rem;
-           
-    
-        }
-        .steps .step::before{
-            background-color: royalblue;
-            
-        }
-        
-        
+    }
+
+    .steps .step:after {
+        font-size: large;
+        font-weight: bolder;
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    .steps .step::before {
+        background-color: royalblue;
+    }
+
 
     &_list {
-        height:auto;
-       
+        height: auto;
     }
 
     &_text {
@@ -30,7 +25,6 @@
         align-self: flex-end;
         margin-top: 3rem;
         text-transform: none;
-
     }
 
     &_title {
@@ -48,6 +42,6 @@
         font-weight: 500;
         text-align: start;
         font-size: 1rem;
-    
+
     }
 }

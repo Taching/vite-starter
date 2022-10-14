@@ -1,6 +1,5 @@
-
-.slide__content p{
-  color:var(--black);
+.slide__content p {
+  color: var(--black);
   text-transform: none;
   width: 100%;
   max-width: 500px;
@@ -13,14 +12,15 @@
   box-sizing: border-box;
   z-index: 1;
   @include center;
+
   &_content {
     margin-inline: 1rem;
     max-width: 1350px;
-    
+
   }
 
   &_info {
-    
+
     align-self: flex-end;
     padding: 4rem 2rem 2rem 2rem;
   }
@@ -29,6 +29,3 @@
     padding-inline: 2rem;
   }
 }
-
-  
-

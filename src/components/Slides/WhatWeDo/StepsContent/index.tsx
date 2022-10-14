@@ -1,39 +1,67 @@
-/* eslint-disable react/prop-types */
-import { useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from 'react';
 import STEPS_TEXT from '../../../../assets/constants/steps';
 import './style.scss';
 
-export default function ContentSteps({ timeLine }) {
+gsap.registerPlugin(ScrollTrigger);
+
+export default function ContentSteps() {
+  const listClassActive = 'step step-secondary steps-style_list';
+  const listClassNeutral = 'step step-neutral steps-style_list';
+
+  const listRef = useRef(null);
+  const revealRefs = useRef([]);
+  revealRefs.current = [];
+
+  const AddToRefs = (el) => {
+    if (el && !revealRefs.current.includes(el)) {
+      revealRefs.current.push(el);
+    }
+  };
   useEffect(() => {
-    timeLine
-      .from(
-        '.steps-vertical',
+    const ul = listRef.current;
+    gsap.fromTo(
+      ul,
+      {
+        opacity: 0,
+        y: 200,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        ease: 'back(1.4).out',
+        duration: 1.5,
+      }
+    );
+    revealRefs.current.forEach((el, index) => {
+      gsap.fromTo(
+        el,
+        { autoAlpha: 0 },
         {
-          opacity: 0,
-          y: 200,
-          ease: 'back(1.4).out',
+          autoAlpha: 1,
           duration: 1,
-        },
-        'Start'
-      )
-      .to(
-        '.steps-vertical',
-        { opacity: 1, y: 0, ease: 'back(1.4).out', duration: 1 },
-        '.5'
+          ease: 'back(1.6).out',
+          ScrollTrigger: {
+            id: `section-${index + 1}`,
+            trigger: el,
+            start: 'top center=+100',
+            toggleActions: 'play none none reverse',
+            markers: true,
+          },
+        }
       );
-  });
+    });
+  }, []);
 
   return (
     <div className="steps steps-style">
-      <ul className="steps steps-vertical">
+      <ul className="steps steps-vertical" ref={listRef}>
         {STEPS_TEXT.map(({ id, title, description }) => (
           <li
+            ref={AddToRefs}
             key={id}
-            className={
-              id === 1
-                ? 'step step-secondary steps-style_list'
-                : 'step step-neutral steps-style_list'
-            }
+            className={id === 1 ? listClassActive : listClassNeutral}
           >
             <div className="steps-style_text">
               <div className="steps-style_title">

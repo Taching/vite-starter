@@ -1,13 +1,13 @@
 .content-style {
- 
+
 
     &_container {
         flex-direction: column;
         margin-top: 2rem;
-        
+
 
         .content-style_text {
-            font-weight:bolder;
+            font-weight: bolder;
             font-size: 4rem;
             color: var(--black);
             text-transform: none;
@@ -17,8 +17,8 @@
             padding-block: 2rem;
             font-size: 1rem;
             font-weight: 600;
-           
-            
+
+
         }
 
         .content-style_img {
