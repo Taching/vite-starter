@@ -8,14 +8,14 @@ import './style.scss';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ContentSteps() {
-  const [mouseEnter, setMouseEnter] = useState(false);
+  // const [mouseEnter, setMouseEnter] = useState(false);
   const listClassActive = 'step step-secondary steps-style_list';
   const listClassNeutral = 'step step-neutral steps-style_list';
 
   const listRef = useRef(null);
-  const arr: string[] = [];
-  const revealsRef = useRef(arr);
-  revealsRef.current = arr;
+  // const arr: string[] = [];
+  // const revealsRef = useRef(arr);
+  // revealsRef.current = arr;
 
   useEffect(() => {
     const ul = listRef.current;
@@ -39,40 +39,40 @@ export default function ContentSteps() {
     );
 
     // eslint-disable-next-line array-callback-return
-    revealsRef?.current.map((el, index) => {
-      if (mouseEnter === true) {
-        gsap.fromTo(
-          el,
-          {
-            autoAlpha: 0,
-          },
-          {
-            duration: 1,
-            autoAlpha: 1,
-            ease: 'power2',
-            scrollTrigger: {
-              trigger: el,
-              start: 'top top+=100',
-              end: 'bottom top',
-              toggleActions: 'restart none none reverse',
-              // markers: "true",
-              scrub: true,
-            },
-          }
-        );
-      }
-    });
+    // revealsRef?.current.map((el, index) => {
+    //   if (mouseEnter === true) {
+    //     gsap.fromTo(
+    //       el,
+    //       {
+    //         autoAlpha: 0,
+    //       },
+    //       {
+    //         duration: 1,
+    //         autoAlpha: 1,
+    //         ease: 'power2',
+    //         scrollTrigger: {
+    //           trigger: el,
+    //           start: 'top top+=100',
+    //           end: 'bottom top',
+    //           toggleActions: 'restart none none reverse',
+    //           // markers: "true",
+    //           scrub: true,
+    //         },
+    //       }
+    //     );
+    //   }
+    // });
   });
 
-  const addToRefs = (el) => {
-    if (el && !revealsRef.current.includes(el)) {
-      revealsRef.current.push(el);
-    }
-  };
+  // const addToRefs = (el) => {
+  //   if (el && !revealsRef.current.includes(el)) {
+  //     revealsRef.current.push(el);
+  //   }
+  // };
 
-  const handleMouseEnter = () => {
-    setMouseEnter(!mouseEnter);
-  };
+  // const handleMouseEnter = () => {
+  //   setMouseEnter(!mouseEnter);
+  // };
 
   return (
     <div className="steps steps-style">
@@ -80,8 +80,8 @@ export default function ContentSteps() {
         {STEPS_TEXT.map(({ id, title, description }) => (
           // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
           <li
-            onScroll={handleMouseEnter}
-            ref={addToRefs}
+            // onScroll={handleMouseEnter}
+            // ref={addToRefs}
             key={id}
             className={id === 1 ? listClassActive : listClassNeutral}
           >
