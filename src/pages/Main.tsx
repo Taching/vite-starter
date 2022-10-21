@@ -14,6 +14,7 @@ import AnimatedCursor from '../components/AnimatedCursor';
 import { ThemeContextType } from '../@types/theme';
 import { ThemeContext } from '../context/themeContext';
 
+
 gsap.registerPlugin(Observer);
 Splitting();
 function Main() {
