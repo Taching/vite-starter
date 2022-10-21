@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef, useState } from 'react';
@@ -50,9 +51,8 @@ export default function ContentSteps() {
             autoAlpha: 1,
             ease: 'power2',
             scrollTrigger: {
-              id: `section-${index + 1}`,
               trigger: el,
-              start: 'top center+=100',
+              start: 'top top+=100',
               end: 'bottom top',
               toggleActions: 'restart none none reverse',
               // markers: "true",
@@ -62,7 +62,7 @@ export default function ContentSteps() {
         );
       }
     });
-  }, []);
+  });
 
   const addToRefs = (el) => {
     if (el && !revealsRef.current.includes(el)) {
@@ -78,12 +78,12 @@ export default function ContentSteps() {
     <div className="steps steps-style">
       <ul className="steps steps-vertical" ref={listRef}>
         {STEPS_TEXT.map(({ id, title, description }) => (
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
           <li
+            onScroll={handleMouseEnter}
             ref={addToRefs}
             key={id}
             className={id === 1 ? listClassActive : listClassNeutral}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseEnter}
           >
             <div className="steps-style_text">
               <div className="steps-style_title">
