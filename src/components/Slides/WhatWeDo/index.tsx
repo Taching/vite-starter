@@ -6,9 +6,9 @@ import './style.scss';
 export default function WhatWeDo() {
   return (
     <SlideContainer>
-      <div className="flex flex-col w-full ">
+      <div className="w-full">
         <div className="wwd-style h-[100vh] w-screen">
-          <div className="flex">
+          <div className="wwd-style_flex">
             <div className="wwd-style_content wwd-style_info">
               <ContentInfo />
             </div>

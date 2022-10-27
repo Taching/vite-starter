@@ -6,6 +6,20 @@
   font-weight: 600;
 }
 
+.wwd-style_flex {
+  display: flex;
+  justify-content: center;
+}
+
+@media(max-width:720px) {
+  .wwd-style_flex{
+    display: block;
+    height: max-content;
+    overflow-x:auto;
+  }
+}
+
+
 .wwd-style {
   background-color: var(--white);
   justify-content: center;
@@ -14,6 +28,7 @@
   @include center;
 
   &_content {
+    flex-wrap: wrap;
     margin-inline: 1rem;
     max-width: 1350px;
 
