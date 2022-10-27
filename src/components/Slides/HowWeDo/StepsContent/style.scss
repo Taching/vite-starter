@@ -2,6 +2,11 @@
 
     .steps-vertical .step:before {
         width: 0.2rem;
+
+    }
+
+    .steps .step::before {
+        background-color: var(--secondary);
     }
 
     .steps .step:after {
@@ -10,8 +15,6 @@
         height: 2.5rem;
         width: 2.5rem;
     }
-
-    
 
     &_list {
         height: auto;
