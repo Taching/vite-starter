@@ -1,7 +1,9 @@
 /* eslint-disable consistent-return */
 /* eslint-disable react/jsx-no-useless-fragment */
 import gsap from 'gsap';
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useCallback, useContext } from 'react';
+import { ThemeContextType } from '../../@types/theme';
+import { ThemeContext } from '../../context/themeContext';
 import './style.scss';
 
 type ModalProps = {
@@ -19,17 +21,21 @@ type ModalProps = {
 };
 
 export default function Modal({ show, project, setShow }: ModalProps) {
-  // const handleClickOutside = () => setShow(false);
+  const { changeScroll, scroll } = useContext(ThemeContext) as ThemeContextType;
   const handleKeyPress = useCallback(
     (event: KeyboardEvent) => {
       if (event.key === 'Escape') setShow(false);
     },
     [setShow]
   );
+  function handleCloseModal() {
+    setShow(!show);
+    changeScroll(!show);
+  }
   const tl = gsap.timeline();
-
   useEffect(() => {
     if (show) {
+      changeScroll(show);
       gsap.set('.modal-style', { scale: 0, opacity: 0 });
       tl.to('.modal-style', {
         scale: 1,
@@ -42,13 +48,13 @@ export default function Modal({ show, project, setShow }: ModalProps) {
         document.removeEventListener('keydown', handleKeyPress);
       };
     }
-  }, [handleKeyPress, show, tl]);
+  }, [handleKeyPress, scroll, changeScroll, show, tl]);
   return (
     <>
       {show && (
         <div
           className="modal-style fixed inset-x-0 top-0 z-10"
-          onClick={() => setShow(!show)}
+          onClick={() => handleCloseModal()}
           role="button"
           tabIndex={0}
           onKeyDown={null}
@@ -57,7 +63,7 @@ export default function Modal({ show, project, setShow }: ModalProps) {
             <div className="modal-style_container border-4 border-secondary rounded-lg shadow-lg bg-neutral outline-none focus:outline-none">
               <button
                 className="p-1 ml-auto bg-transparent border-0 opacity-1 float-right leading-none font-semibold"
-                onClick={() => setShow(!show)}
+                onClick={() => handleCloseModal()}
                 type="button"
               >
                 <span className="modal-close bg-transparent opacity-9 block outline-none">
